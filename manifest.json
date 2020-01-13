@@ -1,0 +1,20 @@
+{
+	"name": "Hi,MathGod",
+	"short_name": "MathGod",
+	"start_url": "/",
+	"display": "standalone",
+	    "theme_color": "#fff",
+    "background_color": "#fff",
+	"icons": [
+		{
+			"src": "logo.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+            "src": "256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+	]
+}
