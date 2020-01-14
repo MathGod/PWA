@@ -1,0 +1,46 @@
+index.html文件名
+<link rel="manifest" href="manifest.json"> 
+
+----------------------最开始不注册不知道行不行，反正第一次行了之后之后可以不要下面js文件只要json
+<script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+<!--另一写法，未测试
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/sw.js');
+}
+-->
+ </script>
+-------------
+
+manifest.json文件名
+{
+	"name": "Hi,MathGod",
+	"short_name": "MathGod",
+	"start_url": "/",
+	"display": "standalone",
+                "theme_color": "#fff",
+    "background_color": "#fff",
+	"icons": [
+		{
+			"src": "192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+		
+	]
+}
+
+最后加一个图片文件192.png
+
+
+注意！！好像前提是要在根目录，不知道非根目录行不行，未测试。
+
+----------------------下面可不要，不是有文件但内容为空的意思而是整个文件都可以不存在，照样可注册
+sw.js文件名
+self.addEventListener('fetch', function (evt) {
+    console.log('sw fetch() 发送的请求', evt.request.url)
+})
