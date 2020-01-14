@@ -15,6 +15,14 @@
     navigator.serviceWorker.register('/sw.js');
   });
 }
+          
+<!--
+这样写不知道行不行，未测试          
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/sw.js');
+}
+-->
+        
     </script>
 </body>
 </html>
